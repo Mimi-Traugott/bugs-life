@@ -5,7 +5,7 @@ class App extends Component {
     super();
 
     this.state = {
-      userInput: "huh",
+      userInput: "",
       list: [
         "learn react",
         "add animations to project",
@@ -43,9 +43,9 @@ class App extends Component {
         <input
           value={this.state.userInput}
           placeholder="Type new todo..."
-          onChange={this.handleInputChange}
+          onChange={(e) => this.handleInputChange(e.target.value)}
         />
-        <button onClick={this.handleSubmit}>Add</button>
+        <button onClick={() => this.handleSubmit()}>Add</button>
         {todoList}
       </div>
     );
